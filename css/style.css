@@ -1,0 +1,138 @@
+ /* Estilos Basicos*/
+ body{
+    margin: 0;
+    font-family: Arial;
+    background-image:   url(../images/novaventa-mujeres.png);
+    background-repeat: no-repeat!important;
+    background-size: cover!important;
+    box-shadow: inset 0 0 0 1000px hsla(0,0%,100%,.6);
+            
+}
+
+.contenedor_general{}
+/* Estilos Header*/
+.navegacion{}
+/* Estilos Navegacion Top*/
+.navegacion .top-nav{
+    background: #EBEBEB;
+    color: #c0ccd3;
+    font-size: 12px;
+    padding: 15px;
+}
+.top-nav ul{
+    margin: 0;
+    padding: 0;
+}
+.top-nav ul li{
+    display: inline-block;
+    margin: 0 20px 0 0;
+
+}
+.top-nav ul li img{
+    margin: 0 5px 0 0;
+    float: left;
+/* Estilos Navegacion Main*/
+}
+.navegacion .main-nav{
+    background: #F7F4F4;
+    color: #9cb2c0;
+    height: 80px;
+}
+.main-nav .logo{
+    float: left;
+}
+.main-nav .menu{
+    float: right;
+    margin: 20px 20px 0 0;
+}
+.menu ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+}
+.menu ul li{
+    display: inline-block;
+
+}
+.menu ul li a{
+    color: #9cb2c0;
+    text-decoration: none;
+    padding: 10px 30px 10px 20px;
+    display: block;
+}
+.menu ul li a.dropdown{
+    background-image: url(../images/menu_arrow.png);
+    background-repeat: no-repeat;
+    background-position: 90% 50%;
+    font-size: 14px;
+
+}
+.menu ul li a:hover{
+    background-color: #222b30;
+}
+/* Estilos Logo*/
+.main-nav .logo{
+    padding: 10px 0 0 20px; 
+}
+
+/* Estilos Hero -Image*/
+
+.hero-image{
+    text-align: center;
+    background-image:url(../images/hero_mama.png);
+    background-position: 50% 0;
+    height: 300px;
+    padding: 200px 0 0 0;
+
+}
+.hero-image h6{
+    margin: 0 0 10px 0;
+    font-size: 20px;
+    color: #F8F5F9;
+    line-height: 20px;
+}
+.hero-image h1{
+    margin: 0 0 30px 0;
+    font-size: 50px;
+    color: #ffffff;
+    line-height: 50px;
+}
+.hero-image p{
+    margin: 0 0 30px 0;
+    font-size: 14px;
+    line-height: 14px;
+}
+.hero-image a{
+    padding: 15px 40px;
+    background-color: orange;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.hero-image a:hover {
+    background-color: #FFC630;
+}
+
+.jumbotron {
+    margin: auto;
+    width: 50%;
+    opacity: 0.8;
+    background: #D8D8D8;
+    border-radius: 5px;
+    padding: 30px;
+}
+
+
+a {
+    padding: 15px 40px;
+    background-color: orange;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+a:hover {
+    background-color: #FFC630;
+}
