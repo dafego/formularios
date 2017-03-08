@@ -1,8 +1,8 @@
 <?php 
 
-	$user = "root";
-	$pass = "";
-	$host = "localhost";
+	$user = "formulario";
+	$pass = "mvjazar";
+	$host = "104.196.100.35";
 	$db = "formularios";
 
 	$conex= new mysqli($host,$user,$pass,$db);
