@@ -14,9 +14,8 @@
         <div class="hero-image">
             
             <h1>Bienvenida Mamá </h1>
-            <a href="guardar_pros.php"> Quiero ser Mamá empresaria</a>
-            <a href="guardar_me.php">Escríbenos</a>
-
+            <a href="contactform.php">Escríbenos</a>
+            <a href="leadform.php"> Quiero ser Mamá empresaria</a>
         </div>
     </div>
 </body>
