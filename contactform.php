@@ -22,6 +22,16 @@
 	<link href="css/estilos.css" rel="stylesheet" type="text/css"/>
 	<link rel="stylesheet" type="text/css" href="css/formstyle.css">
 	<script src='https://www.google.com/recaptcha/api.js'></script>
+	<script>
+		window.onload = function() {
+			var recaptcha = document.forms["contacto"]["g-recaptcha-response"];
+			recaptcha.required = true;
+			recaptcha.oninvalid = function(e) {
+	    // do something
+	    alert("Por favor verifica el captcha");
+	}
+}
+</script>
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -51,7 +61,7 @@
 							<a id="aceptarok" href="#" class="aceptar_check">Aceptar</a>
 						</div>
 					</div>
-					<form class="form" id="" action="https://gnutresa.sugarondemand.com/index.php?entryPoint=webtocase" method="post"  >
+					<form class="form" id="contacto" action="https://gnutresaqas.sugarondemand.com/index.php?entryPoint=webtocase" method="post"  >
 						<h3>Cuéntanos sobre ti</h3>
 						<div class="userform">
 							<div class="form-group col-sm-6">		    							
