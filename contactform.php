@@ -21,6 +21,7 @@
 	<link rel="shortcut icon" href="img/favicon.ico"  type="image/x-icon">
 	<link href="css/estilos.css" rel="stylesheet" type="text/css"/>
 	<link rel="stylesheet" type="text/css" href="css/formstyle.css">
+	<script src='https://www.google.com/recaptcha/api.js'></script>
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -130,7 +131,8 @@
                                 <input type="checkbox" name="description[acepto terminos]" value="si" required>
                                 <a href="https://storage.googleapis.com/portal-contenido-novaventa.appspot.com/estaticos/politica_tratmiento_dato_personales.pdf" target="_blank">Acepto pol&iacute;tica de privacidad</a>
                             </label>
-                        </div>	
+                        </div>
+                        <div class="g-recaptcha" data-sitekey="6LfBlxgUAAAAAFUCz8rT95q8yAtR6uvxU3ndcixD"></div>	
 						<div class="actionbuttons">
 						  <input type="hidden" name="departamentoval" id="departamentoval" >
 						  <!--<div id="enviar" class="btn bttn-fill bttn-md bttn-primary">Enviar</div>-->
