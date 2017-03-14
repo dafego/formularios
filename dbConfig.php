@@ -1,8 +1,8 @@
 <?php
 //db details
 $dbHost = '104.196.100.35';
-$dbUsername = 'dafego';
-$dbPassword = 'mvjazar';
+$dbUsername = 'root';
+$dbPassword = 'Fedora123.';
 $dbName = 'locations_db';
 
 //Connect and select the database
