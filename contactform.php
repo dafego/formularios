@@ -153,13 +153,15 @@
 						<input id="sociedad" name="description[sociedad]" value="AGNOVD" type="hidden"> 
 						<input id="modified_user_id" name="fields[modified_user_id]" style="display:none" type="hidden" value="1">
 						<input id="created_by" name="fields[created_by]" style="display:none" type="hidden" value="1">
-						<input id="sasa_relacion_c" name="fields[sasa_relacion_c]" type="hidden" value="8">
-						<input id="account_id" name="fields[account_id]" type="hidden">
+						<input id="sasa_relacion_c" name="fields[sasa_relacion_c]" type="hidden" value="1">
+						<input id="account_id" name="fields[account_id]" type="hidden" value="63f1a6a2-8981-11e6-bbe5-06b20b8677ed">
+						<input id="accounts_n77f9_cuenta_idb" name="fields[accounts_n77f9_cuenta_idb]" type="hidden" value="c175a362-0061-11e7-8a6b-02b215474f0b">
 						<input id="contact_id" name="fields[contact_id]" type="hidden">
 						<input id="team_id" name="fields[team_id]" type="hidden" type="hidden" value="c4ed3766-fe05-11e6-a96e-02134eb59a31">
 						<input id="status" name="fields[status]" type="hidden" type="hidden" value="New">	
 						<input id="sasa_tificacion_casos_cases_1sasa_tificacion_casos_ida" name="fields[sasa_tificacion_casos_cases_1sasa_tificacion_casos_ida]" type="hidden" type="hidden" value="0b59b2fc-8a88-11e6-8d46-06b20b8677ed">			
 						<input id="sasa_fuente_c" name="fields[sasa_fuente_c]" type="hidden" type="hidden" value="9">
+						<input id="team_set_id" name="fields[team_set_id]" type="hidden" value="2f27f588-e7fb-11e6-b0ff-02c62a0543b1">
 					</form>
 
 				</div>
