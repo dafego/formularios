@@ -1,9 +1,9 @@
 <?php
 //db details
-$dbHost = 'localhost';
-$dbUsername = 'root';
-$dbPassword = '';
-$dbName = 'location_db';
+$dbHost = '104.196.100.35';
+$dbUsername = 'dafego';
+$dbPassword = 'mvjazar';
+$dbName = 'locations_db';
 
 //Connect and select the database
 $db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);

@@ -21,6 +21,7 @@
 	<link rel="shortcut icon" href="img/favicon.ico"  type="image/x-icon">
 	<link href="css/estilos.css" rel="stylesheet" type="text/css"/>
 	<link rel="stylesheet" type="text/css" href="css/formstyle.css">
+    <script src='https://www.google.com/recaptcha/api.js'></script>
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -64,7 +65,20 @@
     	});
     </script>
 </head>
+		<?php 
+				$cit = $_POST['city'];
+				include('dbConfig.php');
 
+					$sql = "SELECT * FROM cities WHERE city_id='$cit' ";
+					$res = $db -> query($sql);
+					$row = $res-> fetch_array(MYSQLI_ASSOC);
+					
+
+					$zonas = $row['zona']; 
+					$ante=  $row['ant']; 
+
+
+		?>
 <body>
 	<div class="contenedor_general">
 		<div class="top-image">
@@ -88,72 +102,81 @@
 							<a id="aceptarok" href="#" class="aceptar_check">Aceptar</a>
 						</div>
 					</div>
+					<form class="form" id="" action="https://gnutresaqas.sugarondemand.com/index.php?entryPoint=WebToLeadCapture" method="post"  >
+
+						<input id="ant_zona_sasa_c" type="hidden" name="ant_zona_sasa_c" placeholder="ant_zona_sasa_c" class="form-control" size="165" autocomplete="off" required value="<?php echo $row['zona']; ?>"/><br>
+						<input id="regio_barrios_leads_1regio_barrios_ida" type="hidden" name="regio_barrios_leads_1regio_barrios_ida" placeholder="regio_barrios_leads_1regio_barrios_ida" class="form-control" size="165" autocomplete="off" required value="<?php echo $row['ant']; ?>"/><br>
 
 
+						<h3>Cuéntanos sobre ti</h3>
+						<div class="userform">
+							<div class="form-group col-sm-6">		    							
+								<label for="NombreContacto">Nombre (s)</label>
+								<input type="text" class="form-control" id="first_name" name="first_name" placeholder="Ingresa tu(s) nombre(s)" required>	
+							</div>
+							<div class="form-group col-sm-6">		    							
+								<label for="ApellidosContacto">Apellido(s)</label>
+								<input type="text" class="form-control" id="last_name" name="last_name" placeholder="Ingressa tus apellidos" required>	
+							</div>
+							<br>
+							<br>
+							<div class="form-group col-sm-6">
+								<label for="TipoID">Tipo de Documento</label>    							
+								<select class="form-control" id="sasa_tipodocumento_c" name="sasa_tipodocumento_c" required>
+									<option value="">- Seleccione una opción -</option>
+									<option value="13">Cédula de ciudadania</option>
+									<option value="12">Tarjeta de identidad</option>
+									<option value="31">NIT</option>
+									<option value="22" >Cédula de extrangerísa</option>
+									<option value="41">Pasaporte</option>
+									<option value="00">Otros</option>						  
+								</select>					
+							</div>
+							<div class="form-group col-sm-6">
+								<label for="NumID">N&uacute;mero de documento</label>
+								<input type="text" class="form-control" id="sasa_nrodocumento_c" name="description[contact_cedula]" placeholder="ingresa tu número de documento" required>			
+							</div> 	
+						</div>
+						<br>
+						<br>
+						<h3>Cuéntanos donde te contactamos</h3>
+						<div class="usercontactform">
+							<div class="form-group col-sm-6">
+								<label for="tel">Número fijo</label>
+								<input type="tel" pattern="[0-9]{7}" class="form-control" id="numero_fijo" name="description[numero_fijo]" placeholder="Ingresa tu numero fijo" required>
+							</div>
+							<div class="form-group col-sm-6">
+								<label for="otrotel">Número alternativo</label>
+								<input type="tel" pattern="[0-9]{7}" class="form-control" id="numero_fijo2" name="description[numero_fijo2]" placeholder="Ingresa tu numero fijo">
+							</div>	
+							<div class="form-group col-sm-6">
+								<label for="NumCel">N&uacute;mero celular</label>
+								<input type="tel" pattern="[0-9]{10}" class="form-control" id="phone_mobile" name="phone_mobile" placeholder="Ingresa tu numero celular" required>			
+							</div>
+							<div class="form-group col-sm-6">
+								<label for="email">Correo electr&oacute;nico</label>
+								<input type="email" class="form-control" id="email" name="email" placeholder="Correo electr&oacute;nico" required>
+							</div>
 
-					<form class="form" action="leadform1.php" method="POST"  enctype="multipart/form-data"   >
+						</div>
 						<div class="ubicationform">
-							<h3>Cuéntanos donde vives</h3>
-							<div class="select-boxes">
 
-							<?php
-								//Include database configuration file
-								include('dbConfig.php');
-
-								//Get all country data
-								$query = $db->query("SELECT * FROM countries WHERE status = 1 ORDER BY country_name ASC");
-
-								//Count total number of rows
-								$rowCount = $query->num_rows;
-								?>
-
-                            <table style="width: 100%;">
-                            	<tbody>
-                            		<tr>
-                            			<td>
-                            				<select name="country" id="country" class="form-control">
-									                <option value="">Departamento</option>
-									                <?php
-									                if($rowCount > 0){
-									                while($row = $query->fetch_assoc()){ 
-									                echo '<option value="'.$row['country_id'].'">'.$row['country_name'].'</option>';
-								                        }
-							                        }else{
-							                        echo '<option value="">Depatamento no existe</option>';
-						                        }
-						                        ?>
-					                        </select>
-                            			</td>
-
-                            			<td>
-                            				<select name="state" id="state" class="form-control c">
-						                        <option value="">seleccione departamento primero</option>
-					                        </select>
-                            			</td>
-
-                            			<td>
-                            				<select name="city" id="city" class="form-control ">
-						                        <option value="">Seleccione municipio primero</option>
-					                        </select>
-                            			</td>
-
-                            		</tr>
-                            	</tbody>
-                            </table>					
-				</div>
+		<div class="autorizacion">
+			<div class="checkbox disabled">
+				<label>
+					<input type="checkbox" name="description[acepto terminos]" value="si" required>
+					<a href="https://storage.googleapis.com/portal-contenido-novaventa.appspot.com/estaticos/politica_tratmiento_dato_personales.pdf" target="_blank">Acepto pol&iacute;tica de privacidad</a>
+				</label>
 			</div>
-
-
-	
+			<div class="g-recaptcha" data-sitekey="6LfBlxgUAAAAAFUCz8rT95q8yAtR6uvxU3ndcixD"></div>		
 			<div class="actionbuttons">
 				<input type="hidden" name="departamentoval" id="departamentoval" >
 				<!--<div id="enviar" class="btn bttn-fill bttn-md bttn-primary">Enviar</div>-->
-				<input type="submit" class="btn btn-primary btn-block" value="Enviar" name="edit_ent" >
-
+				<input type="submit" class="btn btn-primary btn-block" value="Enviar">
 			</div>
 			<input id="tipo_formulario" name="description[tipo_formulario]" value="clientes" type="hidden"> 
 			<input id="redirect_url" name="redirect_url" type="hidden" value="http://www.novaventa.com.co"> 									
-			<input id="sociedad" name="description[sociedad]" value="AGNO" type="hidden"> 
+			<input id="nuts_sociedad_leads_1_name" name="nuts_sociedad_leads_1_name" value="novavd" type="hidden"> 
 			<input id="modified_user_id" name="fields[modified_user_id]" style="display:none" type="hidden" value="1">
 			<input id="created_by" name="fields[created_by]" style="display:none" type="hidden" value="1">
 			<input id="assigned_user_id" name="fields[assigned_user_id]" style="display:none" type="hidden" value="1">
@@ -172,9 +195,6 @@
 	</div>
 </div>   	
 </div>
-
-
-
 
 
 </body>
